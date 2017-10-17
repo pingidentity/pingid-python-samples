@@ -11,10 +11,12 @@ offline_pairing_endpoint = 'https://idpxnyl3m.pingidentity.com/pingid/rest/4/off
 
 api_version = '4.9.17'
 
+# Replace the below values with the values from your properties file
 org_alias = 'ORG_ALIAS'
 use_base64_key = base64.urlsafe_b64decode('BASE64_SECRET_KEY')
 token = 'TOKEN'
 
+# Replace the below values with real user data
 user_name = 'USER_NAME'
 phone_number = 'PHONE_NUMBER' # e.g. +12021234567
 
