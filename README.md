@@ -1,2 +1,3 @@
 # pingid-python-samples
-Sample python scripts to demonstrate the PingID User Management API.
+PingID python module and some usage examples
+
