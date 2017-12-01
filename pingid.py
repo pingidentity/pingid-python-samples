@@ -9,10 +9,11 @@ from jose import jwt
 class PingIDDriver:
     API_VERSION = '4.9.17'
 
-    def __init__(self, properties_file = 'pingid.properties', locale = 'en', verbose = False):
+    def __init__(self, properties_file = 'pingid.properties', locale = 'en', verbose = False, verifyTls = True):
 
         self.locale = locale
         self.verbose = verbose
+        self.verifyTls = verifyTls
 
         with open(properties_file) as f:
             lines = f.readlines()
@@ -63,7 +64,7 @@ class PingIDDriver:
         if self.verbose:
             print('{0}Request Payload{0}\n{1}\n'.format('='*20, req_jwt))
 
-        r = requests.post(url, req_jwt, headers={'Content-Type':'application/json'})
+        r = requests.post(url, req_jwt, headers={'Content-Type':'application/json'}, verify = self.verifyTls)
 
         if self.verbose:
             print('Response status: {0}\n'.format(r.status_code))
@@ -77,3 +78,4 @@ class PingIDDriver:
             print('{0}Response{0}\n{1}\n'.format('='*20, json.dumps(extracted_response, indent=2)))
 
         return extracted_response
+
