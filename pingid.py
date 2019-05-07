@@ -32,7 +32,7 @@ class PingIDDriver:
 
         self.jwt_header = {
             'alg': 'HS256',
-            'org_alias': self.config['org_alias'],
+            'orgAlias': self.config['org_alias'],
             'token': self.config['token']
         }
 
