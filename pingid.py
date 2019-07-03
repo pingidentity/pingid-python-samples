@@ -4,7 +4,7 @@ import json
 import base64
 import arrow
 import requests
-from jose import jwt
+import jwt
 
 class PingIDDriver:
     API_VERSION = '4.9.17'

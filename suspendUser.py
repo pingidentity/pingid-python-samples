@@ -1,12 +1,11 @@
 import pingid
+import sys
 
 PROPERTIES_FILE = './pingid.properties'
 
 req_body = {
-   'getSameDeviceUsers':'false',
-   'userName': 'asaf',
+   'userName':sys.argv[1],
   }
 
 pingid = pingid.PingIDDriver(PROPERTIES_FILE, verbose=True)
-response_body = pingid.call('rest/4/getuserdetails/do', req_body)
-
+response_body = pingid.call('rest/4/suspenduser/do', req_body)

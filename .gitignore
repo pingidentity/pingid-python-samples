@@ -1,0 +1,7 @@
+#macfile
+.DS_*
+  
+
+#ignoring the properties file; Containts Secret.
+*.properties
+
