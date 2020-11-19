@@ -72,7 +72,11 @@ class PingIDDriver:
         if self.verbose:
             print('{0}Response Payload{0}\n{1}\n'.format('='*20, r.content))
 
-        extracted_response = jwt.decode(r.content, key, algorithms=['HS256'])
+        if r.headers['content-type'] == 'application/octet-stream':
+            extracted_response = r.text
+
+        else:
+            extracted_response = jwt.decode(r.content, key, algorithms=['HS256'])
 
         if self.verbose:
             print('{0}Response{0}\n{1}\n'.format('='*20, json.dumps(extracted_response, indent=2)))
