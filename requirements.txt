@@ -1,4 +1,4 @@
-arrow==0.14.2
+arrow==0.15.1
 certifi==2023.7.22
 chardet==3.0.4
 idna==2.8
